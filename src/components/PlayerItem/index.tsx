@@ -11,8 +11,10 @@ type PlayerItemProps = {
 export const PlayerItem = ({ username, leader }: PlayerItemProps) => {
   return (
     <Container>
-      <Image alt="player-picture" src={pfp} className="player-picture" />
-      <span>{username}</span>
+      <div>
+        <Image alt="player-picture" src={pfp} className="player-picture" />
+        <span>{username}</span>
+      </div>
 
       {leader && <span className="leader">VOCÊ É O LIDER</span>}
     </Container>

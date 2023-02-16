@@ -34,6 +34,7 @@ export const Container = styled.div`
         width: 100%;
         height: auto;
         margin-bottom: 24px;
+        position: relative !important;
       }
     }
     .right-content {

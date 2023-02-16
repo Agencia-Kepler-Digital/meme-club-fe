@@ -41,6 +41,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 32px;
+
+    input {
+      margin-top: 16px;
+    }
 
     .button-wrapper {
       display: flex;

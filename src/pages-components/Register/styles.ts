@@ -41,12 +41,21 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 32px;
+
+    input {
+      margin-top: 16px;
+    }
 
     .button-wrapper {
       display: flex;
       width: 100%;
       gap: 12px;
       margin-top: 16px;
+    }
+
+    .google {
+      margin-top: 12px;
     }
   }
 

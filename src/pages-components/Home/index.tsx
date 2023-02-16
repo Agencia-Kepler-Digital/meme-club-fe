@@ -1,11 +1,22 @@
-import Image from 'next/image';
+import { useContext, useEffect, useState } from 'react';
+
 import { Container } from './styles';
-import pfp1 from '../../assets/pfp1.svg';
-import { Reload } from '@/src/assets/icons/Reload';
+
 import { Button } from '@/src/components/Button';
 import { ChevronUp } from '@/src/assets/icons/ChevronUp';
 
+import { useRouter } from 'next/router';
+import { ColyseusContext } from '@/src/contexts/ColyseusContext';
+import { LoginForm } from '@/src/components/LoginForm';
+
 export const Home = () => {
+  const { setUsername, username } = useContext(ColyseusContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    setUsername('');
+  }, []);
+
   return (
     <Container>
       <header>
@@ -15,19 +26,34 @@ export const Home = () => {
       </header>
 
       <main>
-        <Image className="profile-picture" alt="profile-picture" src={pfp1} />
-        <div className="reload-icon-wrapper">
-          <Reload size={24} />
-        </div>
-
-        <form>
-          <input type="text" />
-          <Reload size={24} className="input-icon" color="#FFF" />
-        </form>
+        <LoginForm onChangeSetState={setUsername} />
 
         <div className="button-wrapper">
           <Button title="JOGAR AGORA" />
-          <Button title="CRIAR SALA" type="red" />
+          <Button
+            title="CRIAR SALA"
+            type="red"
+            onClick={() =>
+              router.push({
+                pathname: '/createroom',
+                query: {
+                  username,
+                },
+              })
+            }
+          />
+        </div>
+        <div className="button-wrapper">
+          <Button
+            title="ENTRAR"
+            outline
+            onClick={() => router.push('/login')}
+          />
+          <Button
+            title="CADASTRE-SE"
+            outline
+            onClick={() => router.push('/register')}
+          />
         </div>
       </main>
 

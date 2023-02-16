@@ -18,25 +18,20 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 18px;
         }
         @media (max-width: 1080px) {
-            font-size: 16px;
+            font-size: 17px;
         }
         @media (max-width: 768px) {
-            font-size: 14px;
+            font-size: 16px;
         }
         @media (max-width: 480px) {
-            font-size: 12px;
-        }
-        @media (max-width: 360px) {
-            font-size: 10px;
-        }
-        @media (max-width: 268px) {
-            font-size: 8px;
+            font-size: 15px;
         }
     }
 
  body {
     background: radial-gradient(50% 50% at 50% 50%, #306DE2 0%, #5812C9 100%);
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 32px;
  }
 `;
